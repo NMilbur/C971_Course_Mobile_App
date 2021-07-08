@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Milburn_Courses.TermAddEdit">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Entry x:Name="term_id" IsVisible="False"/>
+            <Label Text="Term Name" FontSize="20" />
+            <Entry x:Name="term_name" />
+            <Label Text="Start Date" FontSize="20" />
+            <DatePicker x:Name="start_date"/>
+            <Label Text="End Date" FontSize="20" />
+            <DatePicker x:Name="end_date"/>
+
+            <Grid>
+                <Button Text="Save"
+                        FontSize="20"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        x:Name="save_btn"
+                        Clicked="save_btn_Clicked"/>
+                <Button Text="Cancel"
+                        FontSize="20"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        x:Name="cancel_btn"
+                        Clicked="cancel_btn_Clicked"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

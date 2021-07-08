@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Milburn_Courses.Views.CourseView">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10">
+                <Label Text="" x:Name="course_name" FontSize="25" FontAttributes="Bold"/>
+                <Label Text="" x:Name="course_date_range" FontSize="20"/>
+
+                <Label Text=""/>
+                <Label Text="Instructor Information:" FontSize="20" FontAttributes="Bold" TextDecorations="Underline"/>
+                <Label Text="" x:Name="instructor_name" FontSize="20"/>
+                <Label Text="" x:Name="phone" FontSize="20"/>
+                <Label Text="" x:Name="email" FontSize="20"/>
+
+                <Label Text=""/>
+                <Grid>
+                    <Label Text="Notes:" FontSize="20" FontAttributes="Bold" 
+                            TextDecorations="Underline" 
+                            Grid.Column="0" Grid.Row="0"/>
+                    <Button Text="Share" 
+                            x:Name="share_link"
+                            Grid.Column="1" Grid.Row="0" 
+                            Clicked="share_link_Clicked"/>
+                </Grid>
+                
+                <Label Text="" x:Name="notes" FontSize="20"/>
+
+                <Label Text=""/>
+                <Label Text="Assessments:" x:Name="assessment_title" 
+                       FontSize="20" FontAttributes="Bold" TextDecorations="Underline"/>
+
+                <StackLayout x:Name="oa_section">
+                    <Label Text="" x:Name="oa_name" FontSize="20"/>
+                    <Label Text="" x:Name="oa_date_range" FontSize="20"/>
+                </StackLayout>
+
+                <Label Text=""/>
+            
+                <StackLayout x:Name="pa_section">
+                    <Label Text="" x:Name="pa_name" FontSize="20"/>
+                    <Label Text="" x:Name="pa_date_range" FontSize="20"/>
+                </StackLayout>
+
+                <Label Text=""/>
+
+                <Grid>
+                    <Button Text="Edit Course" x:Name="edit_course_btn" 
+                            Clicked="edit_course_btn_Clicked" 
+                            Grid.Column="0" Grid.Row="0"
+                            FontSize="20"/>
+                    <Button Text="Delete Course" x:Name="delete_course_btn" 
+                            Clicked="delete_course_btn_Clicked"
+                            Grid.Column="1" Grid.Row="0"
+                            FontSize="20"/>
+                    <Button Text="Cancel" x:Name="cancel_btn" 
+                            Clicked="cancel_btn_Clicked" 
+                            Grid.ColumnSpan="2" Grid.Row="1"
+                            FontSize="20"/>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

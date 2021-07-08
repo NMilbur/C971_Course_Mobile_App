@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Milburn_Courses.Views.TermView">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10">
+                <StackLayout>
+                    <Label x:Name="term_name" Text="" FontSize="25" FontAttributes="Bold" />
+                    <Label x:Name="date_range" Text="" FontSize="20"/>
+                </StackLayout>
+                <Label Text=""/>
+                
+                <ListView x:Name="course_list" ItemTapped="course_list_ItemTapped" RowHeight="100">
+                    <ListView.Header>
+                        <Grid>
+                            <Button Text="Edit Term"
+                                    Grid.Column="0"
+                                    Grid.Row="0"
+                                x:Name="edit_term_btn"
+                                HorizontalOptions="Fill"
+                                FontSize="20" 
+                                Clicked="edit_term_btn_Clicked"/>
+                            <Button Text="Delete Term" x:Name="delete_term_btn"
+                                    Grid.Column="1"
+                                    Grid.Row="0"
+                                HorizontalOptions="Fill"
+                                FontSize="20"
+                                Clicked="delete_term_btn_Clicked"/>
+                            <Label Text="" Grid.Row="1"/>
+                        </Grid>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid VerticalOptions="FillAndExpand">
+                                    <StackLayout>
+                                        <Label Text="{Binding ClassName}"
+                                               Grid.Column="0"
+                                               Grid.RowSpan="2"
+                                               FontSize="20" FontAttributes="Bold"
+                                               HorizontalTextAlignment="Start"/>
+                                        <Label Text="{Binding Status}"
+                                               Grid.Column="1"
+                                               Grid.Row="0"
+                                               FontSize="20"
+                                               HorizontalTextAlignment="Start"/>
+                                        <Label Text="{Binding ClassDateRange}"
+                                               Grid.ColumnSpan="2"
+                                               Grid.Row="1"
+                                               FontSize="20"
+                                               HorizontalTextAlignment="Start"/>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.Footer>
+                        <Grid>
+                            <Label Text="" Grid.Row="0"/>
+                            <Button Text="Add Course" x:Name="add_course_btn"
+                                    Grid.Column="0"
+                                    Grid.Row="1"
+                                HorizontalOptions="Fill"
+                                FontSize="20"
+                                Clicked="add_course_btn_Clicked"/>
+                            <Button Text="Cancel" x:Name="cancel_btn"
+                                    Grid.Column="1"
+                                    Grid.Row="1"
+                                HorizontalOptions="Fill"
+                                FontSize="20"
+                                Clicked="cancel_btn_Clicked"/>
+                        </Grid>
+                    </ListView.Footer>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

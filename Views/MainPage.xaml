@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Milburn_Courses.MainPage">
+    <ScrollView>
+        <StackLayout Padding="10">
+            <ListView x:Name="terms_list" ItemTapped="terms_list_ItemTapped" RowHeight="100">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid VerticalOptions="FillAndExpand" >
+                                <StackLayout>
+                                    <Label Text="{Binding TermName}"
+                                           FontSize="20" FontAttributes="Bold"
+                                           HorizontalTextAlignment="Start"/>
+                                    <Label Text="{Binding DateRange}"
+                                           FontSize="20"
+                                           HorizontalTextAlignment="Start"/>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Footer>
+
+                    <Button Text="Add Term" Grid.Row="1"
+                        HorizontalOptions="Fill"
+                        FontSize="20"
+                        Clicked="Button_Clicked"/>
+                </ListView.Footer>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
